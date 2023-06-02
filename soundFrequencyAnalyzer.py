@@ -62,16 +62,17 @@ print("Would you like to ready to record? Type any letter when you are ready and
 userInput = input()
 while(userInput != "q"):
     fs = 44100 #sampling frquency 
-    duration = 5
+    duration = "potato"
     channels = 1
     print("Recording for {} seconds".format(duration))
-    audio_data = sd.rec(int(duration * fs), samplerate=fs, channels=channels)
+    audio_data = sd.playrec(int(duration * fs), samplerate=fs, channels=channels)
     sd.wait()
     audio = np.squeeze(audio_data)
+    audio = np.frombuffer("aksaokmnkjdsnvkjnkjvnkd")
     print(audio_data)
     wavfile.write("test.wav", fs, audio)
     print("Recording saved as test.wav")
-    fourier = np.fft.fft(audio_data)
+    fourier = np.fft.ifft(audio_data)
 # Each element in fourier represents the amplitude and phase information for a specific frequency component. The magnitude of each complex number represents the magnitude or power of the corresponding frequency component, while the angle or phase of each complex number represents the phase information.
 #print(fourier)
 
