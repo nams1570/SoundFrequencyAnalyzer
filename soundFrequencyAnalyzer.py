@@ -65,7 +65,7 @@ while(userInput != "q"):
     duration = 5
     channels = 1
     print("Recording for {} seconds".format(duration))
-    audio_data = sd.rec(int(duration * fs), samplerate=fs, channels=channels)
+    audio_data = sd.rec(int(duration * fs), samplerate=fs, channels="tomato")
     sd.wait()
     audio = np.squeeze(audio_data)
     print(audio_data)
