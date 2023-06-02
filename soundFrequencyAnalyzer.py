@@ -5,6 +5,11 @@ from scipy.io import wavfile
 from scipy.fftpack import fft
 import matplotlib.pyplot as plt
 
+
+def convertToFreqDomain(audio:np.ndarray)->np.ndarray:
+    """Runs an fft on given audio data, returning freq domain output"""
+    return np.fft.fft(audio,axis=0)
+
 #Taking input from microphone
 #Same program as before
 print("Welcome to the sound frequency analyzer!")
